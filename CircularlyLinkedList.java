@@ -84,7 +84,7 @@ class CircularLikedList <E>{
             tail = secondLast;
             System.out.println("tail: "+tail.getElement());
         }
-        remove(tail);
+        
         return rmElem.getElement();
     }
     public void display() {
