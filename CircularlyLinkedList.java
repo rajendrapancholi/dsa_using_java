@@ -68,60 +68,60 @@ class CircularLikedList <E>{
         size--;
         return head.getElement(); 
     }
-    public E removeLast(){
-        if (isEmpty()) {
-            System.out.println("Empty!");
-            return null;
-        }
-        if (tail.next==tail) {
-            tail = null;
-            return null;
-        }
-        Node<E> secondLast = tail;
-        Node<E> rmElem = tail;
-        while( secondLast.next != rmElem){
-            secondLast = secondLast.next;
-            tail = secondLast;
-            System.out.println("tail: "+tail.getElement());
-        }
-        
-        return rmElem.getElement();
+   public E removeLast(){
+    if (isEmpty()) {
+        System.out.println("Empty!");
+        return null;
     }
+    Node<E> head = tail.getNext();
+    if (head == tail) {
+        E removedElement = tail.getElement();
+        tail = null;
+        size--;
+        return removedElement;
+    } else {
+        Node<E> current = head;
+        // Traverse until the second last node
+        while (current.getNext() != tail) {
+            current = current.getNext();
+        }
+        E removedElement = tail.getElement();
+        current.setNext(head);
+        tail = current;
+        size--;
+        return removedElement;
+    }
+}
     public void display() {
         if (tail == null) {
             System.out.print("Circular Linked List is empty!");
             return;
         }
         Node<E> temp = tail;
-
         do{
             System.out.print(temp.element + " ");
             temp = temp.next;
         } while (temp != tail);
         System.out.println();
     }
-
 }
 //main class
 public class CircularlyLinkedList<E>{
     public static void main(String[] args){
         CircularLikedList<Integer> cll = new CircularLikedList<>();
-        // cll.addFirst(5);
-        // cll.addFirst(4);
-        // cll.addFirst(3);
+        cll.addFirst(4);
+        cll.addFirst(3);
         cll.addFirst(2);
         cll.addFirst(1);
-        cll.addLast(3);
+        cll.addLast(5);
         System.out.println("First Element: "+cll.getFirst());
         System.out.println("Last Element: "+cll.getLast());
         System.out.println("Total Element: "+cll.size());
         cll.display();
         System.out.println("remove Last Element: "+cll.removeLast());
-        // String remove = "Removed element: "+cll.removeFirst();
-        // System.out.println("After remove first element.");
+        String remove = "Removed element: "+cll.removeFirst();
+        System.out.println("After remove first element.");
         System.out.println("Total Element: "+cll.size());
-        // System.out.println(remove);
-        cll.display();
-        
+        cll.display();       
     }
 }
