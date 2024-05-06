@@ -7,7 +7,7 @@ class SignlyLL<E>{
     public int size(){return size;}
     public boolean isEmpty() {return size==0;}
 
-    public static class Node<E> {
+    private static class Node<E> {
         private E element;
         private Node<E> next;
         public Node (E e, Node<E> n){
