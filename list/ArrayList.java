@@ -44,8 +44,9 @@ public class ArrayList<E> implements List<E> {
     }
 
     public void getData() {
-        for (int i = 0; i < size; i++) {
-            System.out.println("Element at: " + (i + 1) + " is: " + data[i]);
+        for (int i = 0; i < data.length; i++) {
+            int j = i + 1;
+            System.out.println("Element at: " + (j) + " is: " + data[i]);
         }
     }
 
