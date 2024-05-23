@@ -44,8 +44,9 @@ public class ArrayList<E> implements List<E> {
     }
 
     public void getData() {
-        for (int i = 0; i < size; i++) {
-            System.out.println("Element at: " + (i + 1) + " is: " + data[i]);
+        for (int i = 0; i < data.length; i++) {
+            int j = i + 1;
+            System.out.println("Element at: " + (j) + " is: " + data[i]);
         }
     }
 
@@ -87,11 +88,14 @@ public class ArrayList<E> implements List<E> {
 
     public static void main(String[] args) {
         System.out.println("hello rajendra Pancholi.");
-        ArrayList<Integer> AL = new ArrayList<Integer>();
-        AL.add(0, 11);
-        AL.add(1, 22);
-        AL.add(2, 33);
-        AL.add(3, 44);
+        ArrayList<String> AL = new ArrayList<String>(6);
+        AL.add(0, "aa");
+        AL.add(1, "bb");
+        AL.add(2, "cc");
+        AL.add(3, "dd");
+        AL.add(4, "ee");
+        AL.add(5, "ff");
+        // AL.add(6, "gg");
         AL.getData();
         System.out.println("remove : " + AL.remove(0));
         System.out.println("After remove");
