@@ -33,5 +33,9 @@ public class CaesarCipher{
         System.out.println("Secret: "+ coded);
         String answer = cipher.decrypt(coded);
         System.out.print("Message: "+answer);
+        System.out.print("print1");
+        System.out.print("print2");
+        System.out.print("print3");
+        System.out.print("print4");
     }
 }
